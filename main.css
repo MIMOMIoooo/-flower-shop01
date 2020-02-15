@@ -32,11 +32,6 @@ h4 {
   font-size: 1.4em;
 }
 
-.leading {
-  font-size: .9em;
-  letter-spacing: 0.06em;
-}
-
 .appstore-btn {
   height: 60px;
   background-image: url(./img/button_appstore.png);
@@ -46,8 +41,13 @@ h4 {
 }
 
 .container {
-  padding: 55px 50px;
+  padding: 25px 20px;
   text-align: center;
+}
+
+.leading {
+  font-size: .9em;
+  letter-spacing: 0.06em;
 }
 
 body {
@@ -139,7 +139,7 @@ body .service .service-wrap {
 
 body .service .service-wrap .common {
   height: 550px;
-  padding: 22px 30px;
+  padding: 22px;
 }
 
 body .service .service-wrap h2 {
@@ -178,7 +178,7 @@ body .service .service-wrap .service-item3 {
 
 body .plan .plan-wrap {
   background-color: #F5F5F5;
-  padding: 75px 0;
+  padding: 45px 0;
 }
 
 body .plan .plan-wrap .plan-wrap-item {
@@ -194,7 +194,7 @@ body .plan .plan-wrap .plan-wrap-item .plan-item {
   display: flex;
   justify-content: space-between;
   max-width: 410px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 body .plan .plan-wrap .plan-wrap-item .plan-item .plan-single {
@@ -218,9 +218,9 @@ body .plan .plan-wrap .plan-wrap-item .plan-item .plan-bouquet {
 
 body .plan .plan-wrap .plan-wrap-item .plan-item .plan-bouquet img {
   position: relative;
-  top: -5%;
-  right: -67%;
-  width: 40%;
+  top: -7%;
+  right: -63%;
+  width: 50%;
 }
 
 body .plan .plan-wrap .plan-wrap-item P {
@@ -228,7 +228,7 @@ body .plan .plan-wrap .plan-wrap-item P {
 }
 
 body .plan .plan-schedule {
-  padding: 75px 0;
+  padding: 50px 0;
 }
 
 body .plan .plan-schedule h2 {
@@ -236,20 +236,21 @@ body .plan .plan-schedule h2 {
 }
 
 body .plan .plan-schedule img {
-  width: 37%;
+  width: 47%;
   display: block;
   margin: 0 auto;
   opacity: .7;
 }
 
 body .download .download-wrap {
-  padding: 70px 0;
+  padding: 50px 0;
   background-color: #3F424A;
 }
 
 body .download .download-wrap h3 {
-  margin-top: 0;
+  margin: 0 0 12px 0;
   text-align: center;
+  font-size: 1.1em;
   color: #fff;
 }
 
@@ -266,12 +267,16 @@ body .summary .container .summary-title img {
   object-fit: cover;
 }
 
+body .summary .container .summary-text {
+  padding-bottom: 30px;
+}
+
 body .summary .container .summary-text h4 {
-  margin: 18px 0 16px 0;
+  margin: 18px 0 10px 0;
 }
 
 body .summary .container .summary-text p {
-  font-size: 1em;
+  font-size: .9em;
   text-align: left;
 }
 
