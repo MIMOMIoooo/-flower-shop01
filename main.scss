@@ -44,9 +44,14 @@ h4 {
   background-size: contain;
   background-position: center;
 }
+.container {
+  padding: 55px 50px;
+  text-align: center;
+}
 
 
 
+// モバイルスタイル(375px)
 body {
   padding: 0;
   line-height: 1.7;
@@ -169,7 +174,7 @@ body {
   .plan {
     .plan-wrap {
       background-color: #F5F5F5;
-      padding: 75px 34px;
+      padding: 75px 0;
       .plan-wrap-item {
         margin: 0 20px;
         h2 {
@@ -182,32 +187,32 @@ body {
           max-width: 410px;
           margin-bottom: 20px;
           .plan-single {
-            // max-width: 100%;
-            width: 195px;
+            width: 100%;
+            // width: 195px;
             height: 250px;
             margin-right: 15px;
             background: url(./img/plan_single.png) no-repeat #fff;
-            // background-repeat: no-repeat;
-            background-size: cover;
+            // background-size: cover;
             background-position: center;
-            background-size: 110px;
+            background-size: 110px 190px;
             border-radius: 12px;
           }
           .plan-bouquet {
-            // max-width: 100%;
-            width: 195px;
+            width: 100%;
+            // width: 195px;
             height: 250px;
             background: url(./img/plan_bouquet.png) no-repeat #fff;
-            // background-repeat: no-repeat;
-            background-size: cover;
+            // background-size: cover;
             background-position: center;
-            background-size: 110px;
+                background-size: 110px 190px;
             border-radius: 12px;
             img {
               position: relative;
-              top: -15px;
-              right: -145px;
-              width: 33%;
+              // top: -16px;
+              // right: -109px;
+              top: -5%;
+              right: -67%;
+              width: 40%;
             }
           }
         }
@@ -237,6 +242,121 @@ body {
         margin-top: 0;
         text-align: center;
         color: #fff;
+      }
+    }
+  }
+  .summary {
+    .container {
+      background-color: #EAD5DC;
+      .summary-title {
+        h3 {
+          font-size: 1.4em;
+        }
+        img {
+          width: 100%;
+          // height: 278px;
+          object-fit: cover;
+        }
+      }
+      .summary-text {
+        h4 {
+          margin: 18px 0 16px 0;
+        }
+        p {
+          font-size: 1em;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .vase {
+    background-color: #E7E3DF;
+    .container {
+      .summary-title{
+        h3 {
+          margin-bottom: 10px;
+        }
+        .vase-discount {
+          display: block;
+          width: fit-content;
+          margin: 0 auto;
+          padding: 7px;
+          font-size: 13px;
+          font-weight: 600;
+          background-color: #FFF;
+        }
+      }
+      img {
+        width: 100%;
+        margin: 0;
+        object-fit: cover;
+      }
+      .summary-text {
+        padding: 0 8px 20px 8px;
+        P {
+          padding-bottom: 20px;
+          text-align: left;
+        }
+        .vase-wrap {
+          display: flex;
+          justify-content: space-between;
+          .vase-item-common {
+            width: 30%;
+            height: 117px;
+          }
+          p {
+            position: relative;
+            top: 88px;
+            font-size: 13px;
+            text-align: center;
+          }
+          .bell {
+            background: url(./img/vase_bell.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+          }
+          .moon {
+            background: url(./img/vase_moon.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+          }
+          .candle {
+            background: url(./img/vase_candle.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+          }
+        }
+      }
+    .discount {
+      margin-bottom: 12px;
+      .discount-about {
+        display: flex;
+        h5 {
+          display: block;
+          width: fit-content;
+          height: fit-content;
+          margin: 0;
+          padding: 3px;
+          font-size: .9em;
+          font-weight: 600;
+          border: 2px solid;
+      }
+        }
+        .discount-price {
+          margin: auto 0 auto 12px;
+          h5 {
+            padding: 0;
+            font-size: 1em;
+            border: none;
+          }
+          p{
+            font-size: .7em;
+          }
+        }
+      }
+      p:last-child {
+        text-align: left;
+        font-size: .8em;
       }
     }
   }
