@@ -230,6 +230,13 @@ body .plan .plan-wrap .plan-wrap-item .plan-item .plan-bouquet img {
   }
 }
 
+@media (min-width: 425px) {
+  body .plan .plan-wrap .plan-wrap-item .plan-item .plan-bouquet img {
+    right: -71%;
+    width: 36%;
+  }
+}
+
 body .plan .plan-wrap .plan-wrap-item P {
   font-size: 0.8em;
 }
@@ -247,6 +254,12 @@ body .plan .plan-schedule img {
   display: block;
   margin: 0 auto;
   opacity: .7;
+}
+
+@media (min-width: 425px) {
+  body .plan .plan-schedule img {
+    width: 44%;
+  }
 }
 
 body .download .download-wrap {
@@ -326,8 +339,22 @@ body .vase .vase-wrap .vase-img {
   background-position: center;
 }
 
+@media (min-width: 425px) {
+  body .vase .vase-wrap .vase-img {
+    height: 438px;
+    background-size: 111%;
+    background-position: bottom;
+  }
+}
+
 body .vase .vase-wrap .summary-text {
   padding: 22px 20px;
+}
+
+@media (min-width: 425px) {
+  body .vase .vase-wrap .summary-text {
+    padding: 22px 36px;
+  }
 }
 
 body .vase .vase-wrap .summary-text P {
@@ -352,6 +379,12 @@ body .vase .vase-wrap .summary-text .vase-wrap p {
   text-align: center;
 }
 
+@media (min-width: 425px) {
+  body .vase .vase-wrap .summary-text .vase-wrap p {
+    top: 93px;
+  }
+}
+
 body .vase .vase-wrap .summary-text .vase-wrap .bell {
   background: url(./img/vase_bell.jpg) no-repeat;
   background-size: cover;
@@ -372,11 +405,18 @@ body .vase .vase-wrap .summary-text .vase-wrap .candle {
 
 body .vase .vase-wrap .discount {
   padding: 0 20px 45px 20px;
+  letter-spacing: 0.04em;
 }
 
 @media (min-width: 375px) {
   body .vase .vase-wrap .discount {
     padding-bottom: 62px;
+  }
+}
+
+@media (min-width: 425px) {
+  body .vase .vase-wrap .discount {
+    padding: 0 36px 62px 36px;
   }
 }
 
@@ -416,7 +456,7 @@ body .vase .vase-wrap .discount p:last-child {
 }
 
 body .description {
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 body .description h2 {
