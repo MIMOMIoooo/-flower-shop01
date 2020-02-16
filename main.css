@@ -64,6 +64,12 @@ body header .header-wrap {
   background-position: bottom;
 }
 
+@media (min-width: 768px) {
+  body header .header-wrap {
+    min-height: 800px;
+  }
+}
+
 body header .header-wrap .logo {
   width: 131px;
   height: 120px;
@@ -88,6 +94,12 @@ body header .header-wrap .logo {
   100% {
     opacity: none;
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (min-width: 768px) {
+  body header .header-wrap .logo {
+    margin-top: 110px;
   }
 }
 
@@ -133,8 +145,21 @@ body header .header-wrap .note p {
   animation-direction: normal;
 }
 
+@media (min-width: 768px) {
+  body header .header-wrap .note {
+    padding-top: 300px;
+  }
+}
+
 body .service .service-wrap {
   flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  body .service .service-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 body .service .service-wrap .common {
@@ -142,10 +167,23 @@ body .service .service-wrap .common {
   padding: 22px;
 }
 
+@media (min-width: 768px) {
+  body .service .service-wrap .common {
+    padding: 45px 35px;
+  }
+}
+
 body .service .service-wrap h2 {
   margin-bottom: 9px;
   font-weight: 500;
   color: #fff;
+}
+
+@media (min-width: 768px) {
+  body .service .service-wrap h2 {
+    font-size: 1.6em;
+    line-height: 1.5;
+  }
 }
 
 body .service .service-wrap .leading {
@@ -160,6 +198,12 @@ body .service .service-wrap .service-item1 {
   background-position: bottom;
 }
 
+@media (min-width: 768px) {
+  body .service .service-wrap .service-item1 {
+    height: 630px;
+  }
+}
+
 body .service .service-wrap .service-item2 {
   max-width: 100%;
   background-image: url(./img/bg_service02.jpg);
@@ -168,12 +212,24 @@ body .service .service-wrap .service-item2 {
   background-position: bottom;
 }
 
+@media (min-width: 768px) {
+  body .service .service-wrap .service-item2 {
+    height: 630px;
+  }
+}
+
 body .service .service-wrap .service-item3 {
   max-width: 100%;
   background-image: url(./img/bg_service03.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+}
+
+@media (min-width: 768px) {
+  body .service .service-wrap .service-item3 {
+    height: 630px;
+  }
 }
 
 body .plan .plan-wrap {
@@ -190,11 +246,23 @@ body .plan .plan-wrap .plan-wrap-item h2 {
   margin: 7px;
 }
 
+@media (min-width: 768px) {
+  body .plan .plan-wrap .plan-wrap-item h2 {
+    font-size: 1.6em;
+  }
+}
+
 body .plan .plan-wrap .plan-wrap-item .plan-item {
   display: flex;
   justify-content: space-between;
   max-width: 410px;
   margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  body .plan .plan-wrap .plan-wrap-item .plan-item {
+    margin: 0 auto 16px auto;
+  }
 }
 
 body .plan .plan-wrap .plan-wrap-item .plan-item .plan-single {
@@ -241,6 +309,13 @@ body .plan .plan-wrap .plan-wrap-item P {
   font-size: 0.8em;
 }
 
+@media (min-width: 768px) {
+  body .plan .plan-wrap .plan-wrap-item P {
+    width: fit-content;
+    margin-left: 159px;
+  }
+}
+
 body .plan .plan-schedule {
   padding: 50px 0;
 }
@@ -259,6 +334,18 @@ body .plan .plan-schedule img {
 @media (min-width: 425px) {
   body .plan .plan-schedule img {
     width: 44%;
+  }
+}
+
+@media (min-width: 768px) {
+  body .plan .plan-schedule img {
+    width: 23%;
+  }
+}
+
+@media (min-width: 768px) {
+  body .download {
+    display: none;
   }
 }
 
