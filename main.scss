@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-// リセット
+// リセット+α
 li {
   list-style-type: none;
 }
@@ -8,12 +8,6 @@ body,p,a,ul,li {
   margin: 0;
   padding: 0;
   text-decoration: none;
-}
-
-// ベーススタイル
-body {
-  overflow-x: hidden;
-  grid-template-columns: repeat(12, 1fr);
 }
 
 // フォント
@@ -33,37 +27,30 @@ h4 {
   font-size: 1.4em;
 }
 
-
-//共通
-.appstore-btn {
-  height: 60px;
-  background-image: url(./img/button_appstore.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-.container {  //共通じゃなくなったので戻す
-  padding: 25px 20px;
-  text-align: center;
-}
-.leading {
-  font-size: .9em;
-  letter-spacing: 0.06em;
+@mixin animaitions {
+  animation-name: fade-in;
+  animation-duration: 2s; //アニメーション時間
+  animation-timing-function: ease; //アニメーションさせるイージング
+  animation-delay: .2s; //アニメーション開始させる時間
+  animation-iteration-count: 1; //繰り返し回数
+  animation-direction: normal; //往復処理をするかどうか
 }
 
 
-// モバイル最小(320px〜)
+// モバイルファースト320pxベース
 body {
   padding: 0;
   line-height: 1.7;
+  overflow-x: hidden;
+  grid-template-columns: repeat(12, 1fr);
   header {
     .header-wrap {
       width: 100%;
-      min-height: 700px;
+      min-height: 660px;
       padding-top: 50px;
-      background: url(./img/bg_header.jpg) no-repeat;
+      background: url(./img/bg_header.jpg) no-repeat center;
       background-size: cover;
-      background-position: bottom;
+      position: relative;
       @media (min-width: 768px) {
         min-height: 800px;
       }
@@ -71,16 +58,9 @@ body {
         width: 131px;
         height: 120px;
         margin: 27px auto 0 auto;
-        background-image: url(./img/header_logo.png);
-        background-repeat: no-repeat;
+        background: url(./img/header_logo.png) no-repeat center;
         background-size: contain;
-        background-position: center;
-        animation-name: fade-in;
-        animation-duration: 2s; //アニメーション時間
-        animation-timing-function: ease; //アニメーションさせるイージング
-        animation-delay: .2s; //アニメーション開始させる時間
-        animation-iteration-count: 1; //繰り返し回数
-        animation-direction: normal; //往復処理をするかどうか
+        @include animaitions;
         @keyframes fade-in {
           0% {
             opacity: .6;
@@ -101,20 +81,13 @@ body {
         text-align: center;
         font-size: 1.1rem;
         color: #fff;
-        animation-name: fade-in;
-        animation-duration: 2s; //アニメーション時間
-        animation-timing-function: ease; //アニメーションさせるイージング
-        animation-delay: .2s; //アニメーション開始させる時間
-        animation-iteration-count: 1; //繰り返し回数
-        animation-direction: normal; //往復処理をするかどうか
+        @include animaitions;
       }
       .appstore-btn {
-        animation-name: fade-in;
-        animation-duration: 2s; //アニメーション時間
-        animation-timing-function: ease; //アニメーションさせるイージング
-        animation-delay: .2s; //アニメーション開始させる時間
-        animation-iteration-count: 1; //繰り返し回数
-        animation-direction: normal; //往復処理をするかどうか
+        height: 60px;
+        background: url(./img/button_appstore.png) no-repeat center;
+        background-size: contain;
+        @include animaitions;
       }
       .note {
         padding-top: 243px;
@@ -125,12 +98,7 @@ body {
           text-align: left;
           font-size: .8rem;
           color: #fff;
-          animation-name: fade-in;
-          animation-duration: 2s; //アニメーション時間
-          animation-timing-function: ease; //アニメーションさせるイージング
-          animation-delay: .2s; //アニメーション開始させる時間
-          animation-iteration-count: 1; //繰り返し回数
-          animation-direction: normal; //往復処理をするかどうか
+          @include animaitions;
         }
         @media (min-width: 768px) {
           padding-top: 300px;
@@ -162,34 +130,30 @@ body {
         }
       }
       .leading {
+        font-size: .9em;
+        letter-spacing: 0.06em;
         color: #fff;
       }
       .service-item1 {
         max-width: 100%;
-        background-image: url(./img/bg_service01.jpg);
-        background-repeat: no-repeat;
+        background: url(./img/bg_service01.jpg) no-repeat bottom;
         background-size: cover;
-        background-position: bottom;
         @media (min-width: 768px) {
           height: 630px;
         }
       }
       .service-item2 {
         max-width: 100%;
-        background-image: url(./img/bg_service02.jpg);
-        background-repeat: no-repeat;
+        background: url(./img/bg_service02.jpg) no-repeat bottom;
         background-size: cover;
-        background-position: bottom;
         @media (min-width: 768px) {
           height: 630px;
         }
       }
       .service-item3 {
         max-width: 100%;
-        background-image: url(./img/bg_service03.jpg);
-        background-repeat: no-repeat;
+        background: url(./img/bg_service03.jpg) no-repeat bottom;
         background-size: cover;
-        background-position: bottom;
         @media (min-width: 768px) {
           height: 630px;
         }
@@ -197,6 +161,10 @@ body {
     }
   }
   .plan {
+    @media (min-width: 824px) {
+      grid-template-columns: 55% 45%;
+      display: grid;
+    }
     .plan-wrap {
       background-color: #F5F5F5;
       padding: 45px 0;
@@ -209,59 +177,60 @@ body {
             font-size: 1.6em;
           }
         }
-        .plan-item {
-          display: flex;
-          justify-content: space-between;
-          max-width: 410px;
-          margin-bottom: 16px;
-          @media (min-width: 768px) {
-            margin: 0 auto 16px auto;
+        .plan-item-list {
+          @media (min-width: 426px) {
+            margin: 0 auto;
+            width: 410px;
           }
-          .plan-single {
-            width: 100%;
-            height: 250px;
-            margin-right: 15px;
-            background: url(./img/plan_single.png) no-repeat #fff;
-            background-position: center;
-            background-size: 110px 190px;
-            border-radius: 12px;
-          }
-          .plan-bouquet {
-            width: 100%;
-            height: 250px;
-            background: url(./img/plan_bouquet.png) no-repeat #fff;
-            background-position: center;
-                background-size: 110px 190px;
-            border-radius: 12px;
-            img {
-              position: relative;
-              // top: -16px;
-              // right: -109px;
-              top: -7%;
-              right: -63%;
-              width: 50%;
-              @media (min-width: 375px) {
-                right: -68%;
-                width: 42%;
-              } 
-              @media (min-width: 425px) {
-                right: -71%;
-                width: 36%;
+          .plan-item {
+            display: flex;
+            justify-content: space-between;
+            max-width: 410px;
+            margin-bottom: 16px;
+            @media (min-width: 768px) {
+              margin: 0 auto 16px auto;
+            }
+            .plan-single {
+              width: 100%;
+              height: 250px;
+              margin-right: 15px;
+              background: #fff url(./img/plan_single.png) no-repeat center;
+              background-size: 110px 190px;
+              border-radius: 12px;
+            }
+            .plan-bouquet {
+              width: 100%;
+              height: 250px;
+              background: #fff url(./img/plan_bouquet.png) no-repeat center;
+              background-size: 110px 190px;
+              border-radius: 12px;
+              img {
+                position: relative;
+                top: -7%;
+                right: -63%;
+                width: 50%;
+                @media (min-width: 375px) {
+                  right: -68%;
+                  width: 42%;
+                } 
+                @media (min-width: 425px) {
+                  right: -71%;
+                  width: 36%;
+                }
               }
             }
           }
-        }
-        P {
-          font-size: 0.8em;
-          @media (min-width: 768px) {
-            width: fit-content;
-            margin-left: 159px;
+          P {
+            font-size: 0.8em;
           }
         }
       }
     }
   .plan-schedule {
     padding: 50px 0;
+    @media (min-width: 824px) {
+      align-self: center;
+    }
     h2 {
       text-align: center;
     }
@@ -275,6 +244,9 @@ body {
     }
     @media (min-width: 768px) {
       width: 23%;
+    }
+    @media (min-width: 824px) {
+      width: 30%;
     }
     }
   }
@@ -292,10 +264,18 @@ body {
         font-size: 1.1em;
         color: #fff;
       }
+      .appstore-btn {
+        height: 60px;
+        background: url(./img/button_appstore.png) no-repeat center;
+        background-size: contain;
+      }
     }
   }
   .summary {
     .container {
+      padding: 25px 20px;
+      text-align: center;
+      background-color: #EAD5DC;
       @media (min-width: 768px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -303,7 +283,6 @@ body {
       @media (min-width: 1024px) {
         padding: 100px 40px;
       }
-      background-color: #EAD5DC;
       .summary-title {
         @media (min-width: 768px) {
           grid-column: 2;
@@ -317,7 +296,6 @@ body {
       }
       img {
         width: 100%;
-        // height: 278px;
         object-fit: cover;
         @media (min-width: 768px) {
           margin-top: 35px;
@@ -351,9 +329,9 @@ body {
     }
   }
   .vase {
-    background-color: #E7E3DF;
     .vase-wrap {
       text-align: center;
+      background-color: #E7E3DF;
       @media (min-width: 768px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -384,15 +362,15 @@ body {
       }
       .vase-img {
         height: 370px;
-        background: url(./img/bg_vase.jpg) no-repeat;
-        background-size: 110%;
-        background-position: center;
+        background: url(./img/bg_vase.jpg) no-repeat center;
+        background-size: 370px;
         @media (min-width: 375px) {
-          height: 400px;
+          height: 370px;
+          background-size: 390px;
         }
         @media (min-width: 425px) {
           height: 438px;
-          background-size: 111%;
+          background-size: 460px;
           background-position: bottom;
         }
         @media (min-width: 768px) {
@@ -410,7 +388,9 @@ body {
       .summary-text {
         padding: 22px 20px;
         @media (min-width: 425px) {
-          padding: 22px 36px;
+          margin: 10px auto;
+          padding: 20px;
+          width: 390px;
         }
         @media (min-width: 1024px) {
           padding: 30px 63px;
@@ -439,19 +419,16 @@ body {
             }
           }
           .bell {
-            background: url(./img/vase_bell.jpg) no-repeat;
+            background: url(./img/vase_bell.jpg) no-repeat center;
             background-size: cover;
-            background-position: center;
           }
           .moon {
-            background: url(./img/vase_moon.jpg) no-repeat;
+            background: url(./img/vase_moon.jpg) no-repeat center;
             background-size: cover;
-            background-position: center;
           }
           .candle {
-            background: url(./img/vase_candle.jpg) no-repeat;
+            background: url(./img/vase_candle.jpg) no-repeat center;
             background-size: cover;
-            background-position: center;
           }
         }
       }
@@ -462,7 +439,8 @@ body {
         padding-bottom: 62px;
       }
       @media (min-width: 425px) {
-        padding: 0 36px 62px 36px;
+        margin: auto;
+        width: 390px;
       }
       @media (min-width: 1024px) {
         padding: 0 63px 62px 63px;
@@ -501,25 +479,53 @@ body {
   }
   .description {
     padding: 40px 20px;
+    @media (min-width: 768px) {
+      padding: 50px 20px;
+    }
     h2 {
       text-align: center;
     }
     .description-item {
+      @media (max-width: 716px) and (min-width: 485px){
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+      }
+      @media (min-width: 717px) {
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 60px;
+      }
       text-align: center;
       img {
-        width: 28%;
+        width: 80px;
       }
       h3 {
         margin: 10px 0;
+        @media (min-width: 717px) {
+          font-size: 1.6em;
+        }
       }
       .simple {
         padding-bottom: 20px;
+        @media (max-width: 716px) and (min-width: 485px){
+          grid-column: 1/3;
+          grid-row: 1;
+        }
       }
       .notice {
         padding-bottom: 20px;
+        @media (max-width: 716px) and (min-width: 485px){
+          grid-column: 3/5;
+          grid-row: 1;
+        }
       }
       .guarantee {
         padding-bottom: 20px;
+        @media (max-width: 716px) and (min-width: 485px){
+          grid-column: 2/4;
+          grid-row: 2;
+        }
       }
     }
   }
@@ -527,53 +533,113 @@ body {
     background-color: #EFDFC5;
     .download2-wrap {
       padding-top: 20px;
-      .logo {
-        width: 115px;
-        height: 115px;
-        margin: 0 auto;
-        background-image: url(./img/logo_vertical_navy.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
+      @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        height: 420px;
       }
-      h1 {
-        margin-top: 0px;
-        margin-bottom: 20px;
-        text-align: center;
-        font-size: 1rem;
+      .download2-text {
+        @media (min-width: 768px) {
+          position: relative;
+          right: 90px;
+          z-index: 1;
+        }
+        @media (min-width: 1024px) {
+          position: relative;
+          top: 30px;
+          left: -100px;
+        }
+        @media (min-width: 1440px) {
+          top: 20px;
+          left: 15px;
+        }
+        .logo {
+          width: 115px;
+          height: 115px;
+          margin: 0 auto;
+          background: url(./img/logo_vertical_navy.png) no-repeat center;
+          background-size: contain;
+        }
+        h1 {
+          margin-top: 0px;
+          margin-bottom: 20px;
+          text-align: center;
+          font-size: 1rem;
+        }
       }
       img {
         object-fit: cover;
         width: 100%;
+        @media (min-width: 768px) {
+          width: 50%;
+          position: relative;
+          left: 70px;
+        }
+        @media (min-width: 1440px) {
+          width: 35%;
+          left: 7px;
+        }
       }
     }
   }
   footer {
-    background-color: #3F424A;
     .footer-wrap {
-      padding: 30px 30px 0 30px;
-      ul {
-        li {
-          padding-bottom: 10px;
-          a{
-          font-size: .9em;
-          color: #fff;
+      // display: -webkit-flex;
+      background-color: #3F424A;
+      @media (min-width: 768px) {
+        height: 226px;
+        display: -webkit-flex; //768px〜インスタアイコンとcopylightをBottomを基準に配置
+        -webkit-flex-direction: column; //横並び
+        -webkit-justify-content: space-between; //均等に
+      }
+      @media (min-width: 1024px) {
+        height: 270px;
+      }
+      @media (min-width: 1440px) {
+        height: 300px;
+      }
+      .footer-nav {
+        padding: 30px 30px 0 30px;
+        @media (min-width: 768px) {
+          padding: 50px 140px 0 30px;
+        }
+        @media (min-width: 1024px) {
+          padding-top: 65px;
+        }
+        ul {
+          @media (min-width: 768px) {
+            display: flex;
+            justify-content: space-around;
+          }
+          li {
+            padding-bottom: 10px;
+            a{
+            font-size: .9em;
+            color: #fff;
+            }
           }
         }
       }
-    }
-    .fa-instagram {
-      position: relative;
-      top: -162px;
-      left: 255px;  
-      color: #fff;
-    }
-    .copylight {
-      padding-bottom: 20px;
-      text-align: center;
-      p {
-        color: #8C8D92;
+      .fa-instagram {
+        position: relative;
+        top: -174px;
+        color: #fff;
+        display: block;
+        margin-right: 20px;
+        margin-left: auto;
+        width: fit-content;
+        @media (min-width: 768px) {
+          top: -79px;
+        }
+      }
+      .copylight {
+        padding-bottom: 20px;
+        text-align: center;
+        p {
+          color: #8C8D92;
+        }
       }
     }
   }
-}//body
+}
