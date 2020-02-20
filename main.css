@@ -548,12 +548,6 @@ body .vase .vase-wrap .summary-text {
   }
 }
 
-@media (min-width: 1024px) {
-  body .vase .vase-wrap .summary-text {
-    padding: 30px 63px;
-  }
-}
-
 body .vase .vase-wrap .summary-text P {
   padding-bottom: 20px;
   text-align: left;
@@ -618,12 +612,6 @@ body .vase .vase-wrap .discount {
   body .vase .vase-wrap .discount {
     margin: auto;
     width: 390px;
-  }
-}
-
-@media (min-width: 1024px) {
-  body .vase .vase-wrap .discount {
-    padding: 0 63px 62px 63px;
   }
 }
 

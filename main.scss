@@ -392,9 +392,6 @@ body {
           padding: 20px;
           width: 390px;
         }
-        @media (min-width: 1024px) {
-          padding: 30px 63px;
-        }
         P {
           padding-bottom: 20px;
           text-align: left;
@@ -441,9 +438,6 @@ body {
       @media (min-width: 425px) {
         margin: auto;
         width: 390px;
-      }
-      @media (min-width: 1024px) {
-        padding: 0 63px 62px 63px;
       }
       .discount-about {
         display: flex;
